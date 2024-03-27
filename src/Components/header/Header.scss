@@ -1,0 +1,126 @@
+@use "../../scss/veriables.scss" as vars;
+@use "../../scss/mixins.scss" as mix;
+
+.notes__main-box {
+  display: flex;
+  align-items: start;
+  justify-content: start;
+}
+
+.notes__main-field {
+  width: 100%;
+}
+.navbar {
+  transition: width 0.3s ease;
+  background: rgba(24, 22, 22, 0.51);
+  border-radius: 0px 10px 10px 0px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(12.9px);
+  -webkit-backdrop-filter: blur(12.9px);
+  height: 100vh;
+  animation: slideRight 0.5s ease forwards;
+}
+@keyframes slideRight {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+.navbar__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 17px 20px 5px 10px;
+}
+.navbar__list {
+  list-style: none;
+  padding: 0;
+  width: 300px;
+  margin-top: 15px;
+
+  & li {
+    padding: 5px 10px 5px 20px;
+    cursor: pointer;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    gap: 8px;
+
+    .navbar__link {
+      color: vars.$text-color;
+    }
+
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.5);
+      backdrop-filter: blur(10px);
+
+      & .navbar__link {
+        color: white;
+      }
+    }
+
+    &:last-child {
+      position: fixed;
+      bottom: 20px;
+      width: 100%;
+    }
+  }
+}
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 100%;
+  transition: max-width 0.3s ease;
+  padding: 9px 0px;
+  animation: slideUp 0.8s ease forwards;
+
+  &__title-box {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    & h1 {
+      color: vars.$text-color;
+    }
+  }
+  @keyframes slideUp {
+    from {
+      transform: translateY(100%);
+    }
+    to {
+      transform: translateY(0);
+    }
+  }
+}
+.navbar__button {
+  @include mix.navbar-button();
+}
+.x__button {
+  padding: 8px 11px 7px 11px;
+}
+
+.input__search-box {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  & div {
+    position: relative;
+  }
+}
+
+.search__input {
+  @include mix.search-input();
+}
+
+.search__button {
+  @include mix.search-button();
+}
+
+.more__actions-button {
+  padding: 8px 16px 7px 16px;
+}

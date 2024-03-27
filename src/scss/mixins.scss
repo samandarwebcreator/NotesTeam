@@ -1,0 +1,51 @@
+@use "./veriables.scss" as vars;
+
+@mixin navbar-button() {
+  color: vars.$text-color;
+  background-color: transparent;
+  padding: 8px 10px 7px 10px;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 18px;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+
+    color: white;
+  }
+}
+
+@mixin search-input() {
+  padding: 6px 8px 6px 18px;
+  width: 300px;
+  border: 1px solid vars.$text-color;
+  border-radius: 30px;
+  background-color: transparent;
+  outline: none;
+  color: vars.$text-color;
+  font-weight: 600;
+
+  &::placeholder {
+    color: vars.$text-color;
+  }
+}
+
+@mixin search-button() {
+  color: vars.$text-color;
+  background-color: transparent;
+  border: 0px;
+  position: absolute;
+  right: 12px;
+  top: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+
+  &:hover {
+    color: white;
+  }
+}
