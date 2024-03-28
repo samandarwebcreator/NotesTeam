@@ -39,34 +39,29 @@
   padding: 0;
   width: 300px;
   margin-top: 15px;
+}
 
-  & li {
-    padding: 5px 10px 5px 20px;
-    cursor: pointer;
-    border-radius: 8px;
-    display: flex;
-    align-items: center;
-    justify-content: start;
-    gap: 8px;
+.navbar__link {
+  padding: 5px 10px 5px 20px;
+  cursor: pointer;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  gap: 8px;
+  color: vars.$text-color;
+  transition: all 0.2s ease-in-out;
 
-    .navbar__link {
-      color: vars.$text-color;
-    }
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(10px);
+    color: white;
+  }
 
-    &:hover {
-      background-color: rgba(255, 255, 255, 0.5);
-      backdrop-filter: blur(10px);
-
-      & .navbar__link {
-        color: white;
-      }
-    }
-
-    &:last-child {
-      position: fixed;
-      bottom: 20px;
-      width: 100%;
-    }
+  &:last-child {
+    position: fixed;
+    bottom: 20px;
+    width: 100%;
   }
 }
 .header {

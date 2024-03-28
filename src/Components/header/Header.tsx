@@ -40,38 +40,23 @@ export default function Header() {
               <FontAwesomeIcon icon={faXmark} />
             </button>
           </div>
-          <ul
+          <div
             id="nav-menu"
             className={`${navbarOpen ? "opened" : "collapse"} navbar__list`}
           >
-            <li>
-              <FontAwesomeIcon
-                className="navbar__link link__icon"
-                icon={faListUl}
-              />
-              <Link className="navbar__link" to="/notes">
-                All notes
-              </Link>
-            </li>
-            <li>
-              <FontAwesomeIcon
-                icon={faTrash}
-                className="navbar__link link__icon"
-              />
-              <Link className="navbar__link" to="/trash">
-                Trash
-              </Link>
-            </li>
-            <li>
-              <FontAwesomeIcon
-                icon={faGear}
-                className="navbar__link link__icon"
-              />
-              <Link className="navbar__link" to="/settings">
-                Settings
-              </Link>
-            </li>
-          </ul>
+            <Link className="navbar__link" to="/notes">
+              <FontAwesomeIcon icon={faListUl} />
+              All notes
+            </Link>
+            <Link className="navbar__link" to="/trash">
+              <FontAwesomeIcon icon={faTrash} />
+              Trash
+            </Link>
+            <Link className="navbar__link" to="/settings">
+              <FontAwesomeIcon icon={faGear} />
+              Settings
+            </Link>
+          </div>
         </div>
       ) : null}
 
